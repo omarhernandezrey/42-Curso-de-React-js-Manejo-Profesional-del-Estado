@@ -1,6 +1,9 @@
 import React from 'react';
 
+const SECURITY_CODE = 'paradise';
+
 function UseState({ name }) {
+  const [value, setValue] = React.useState('');
   const [error, setError] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
 
@@ -10,7 +13,15 @@ function UseState({ name }) {
     if (loading) {
       setTimeout(() => {
         console.log('Haciendo la validación');
-        setLoading(false);
+        
+        if (value === SECURITY_CODE) {
+          setError(false);
+          setLoading(false);
+        } else {
+          setError(true);
+          setLoading(false);
+        }
+
         console.log('Terminando el efecto');
       }, 3000);
     }
@@ -29,7 +40,13 @@ function UseState({ name }) {
         <p>Cargando...</p>
       )}
 
-      <input placeholder="Código de seguridad" />
+      <input 
+        placeholder="Código de seguridad" 
+        value={value}
+        onChange={(event) => {
+          setValue(event.target.value);
+        }}
+      />
       <button onClick={() => setLoading(true)}>Comprobar</button>
     </div>
   );
