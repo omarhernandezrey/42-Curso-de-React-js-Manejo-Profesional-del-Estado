@@ -102,6 +102,7 @@ function UseState({ name }) {
           }}
         />
         <button onClick={() => {
+          // Forma imperativa: especificamos paso a paso qué cambiar
           setState({ 
             ...state,
             loading: true,
