@@ -24,7 +24,7 @@ Project to demonstrate professional state management concepts in React.
 | 16 | 16 ¿Qué son los estados derivados | `bd8a2cf` | ✅ |
 | 17 | 17 Migración de useState a useReducer en useLocalStorage | `5b7e0aa` | ✅ |
 | 18 | 18 Imponer tu visión vs. trabajar en equipo | `b737613` | ✅ |
-| 19 | 19 ¿Quieres más cursos de React.js | `Pending` | ✅ |
+| 19 | 19 ¿Quieres más cursos de React.js | `2f062ce` | ✅ |
 
 ## Conclusión
 
