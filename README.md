@@ -13,7 +13,7 @@ Project to demonstrate professional state management concepts in React.
 | 5 | 5 Métodos del ciclo de vida en React.Component | - | ✅ |
 | 6 | 6 Estados independientes con useState | - | ✅ |
 | 7 | 7 ¿Dónde actualizar el estado | - | ✅ |
-| 8 | 8 Estados compuestos con React.Component | - | ❌ |
+| 8 | 8 Estados compuestos con React.Component | - | ✅ |
 | 9 | 9 Estados compuestos con useState | - | ❌ |
 | 10 | 10 Estados imperativos con useState | - | ❌ |
 | 11 | 11 Estados semideclarativos con useState | - | ❌ |
