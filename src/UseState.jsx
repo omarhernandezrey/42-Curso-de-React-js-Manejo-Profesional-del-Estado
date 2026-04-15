@@ -3,53 +3,113 @@ import React from 'react';
 const SECURITY_CODE = 'paradise';
 
 function UseState({ name }) {
-  const [value, setValue] = React.useState('');
-  const [error, setError] = React.useState(false);
-  const [loading, setLoading] = React.useState(false);
+  const [state, setState] = React.useState({
+    value: '',
+    error: false,
+    loading: false,
+    deleted: false,
+    confirmed: false,
+  });
 
   React.useEffect(() => {
     console.log('Empezando el efecto');
 
-    if (loading) {
+    if (state.loading) {
       setTimeout(() => {
         console.log('Haciendo la validación');
         
-        if (value === SECURITY_CODE) {
-          setError(false);
-          setLoading(false);
+        if (state.value === SECURITY_CODE) {
+          setState({ 
+            ...state,
+            error: false,
+            loading: false,
+            confirmed: true,
+          });
         } else {
-          setError(true);
-          setLoading(false);
+          setState({ 
+            ...state,
+            error: true,
+            loading: false,
+          });
         }
 
         console.log('Terminando el efecto');
       }, 3000);
     }
-  }, [loading]);
+  }, [state.loading]);
 
-  return (
-    <div>
-      <h2>Eliminar {name}</h2>
-      <p>Por favor, escribe el código de seguridad.</p>
+  if (!state.deleted && state.confirmed) {
+    return (
+      <React.Fragment>
+        <p>¿Seguro que quieres eliminar?</p>
+        <button
+          onClick={() => {
+            setState({ 
+              ...state,
+              deleted: true,
+            });
+          }}
+        >Sí, eliminar</button>
+        <button
+          onClick={() => {
+            setState({ 
+              ...state,
+              confirmed: false,
+              value: '',
+            });
+          }}
+        >No, cancelar</button>
+      </React.Fragment>
+    );
+  } else if (state.deleted && state.confirmed) {
+    return (
+      <React.Fragment>
+        <p>Eliminado con éxito</p>
+        <button
+          onClick={() => {
+            setState({ 
+              ...state,
+              confirmed: false,
+              deleted: false,
+              value: '',
+            });
+          }}
+        >Recuperar</button>
+      </React.Fragment>
+    );
+  } else {
+    return (
+      <div>
+        <h2>Eliminar {name}</h2>
+        <p>Por favor, escribe el código de seguridad.</p>
 
-      {(error && !loading) && (
-        <p>Error: el código es incorrecto</p>
-      )}
+        {(state.error && !state.loading) && (
+          <p>Error: el código es incorrecto</p>
+        )}
 
-      {loading && (
-        <p>Cargando...</p>
-      )}
+        {state.loading && (
+          <p>Cargando...</p>
+        )}
 
-      <input 
-        placeholder="Código de seguridad" 
-        value={value}
-        onChange={(event) => {
-          setValue(event.target.value);
-        }}
-      />
-      <button onClick={() => setLoading(true)}>Comprobar</button>
-    </div>
-  );
+        <input 
+          placeholder="Código de seguridad" 
+          value={state.value}
+          onChange={(event) => {
+            setState({ 
+              ...state,
+              value: event.target.value,
+            });
+          }}
+        />
+        <button onClick={() => {
+          setState({ 
+            ...state,
+            loading: true,
+          });
+        }}>Comprobar</button>
+      </div>
+    );
+  }
 }
 
 export { UseState };
