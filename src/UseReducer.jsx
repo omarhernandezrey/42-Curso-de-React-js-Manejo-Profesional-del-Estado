@@ -46,6 +46,11 @@ const reducer = (state, action) => {
 function UseReducer({ name }) {
   const [state, dispatch] = React.useReducer(reducer, initialState);
 
+  // Estados derivados: se calculan a partir del estado actual en cada render.
+  const isError = state.error && !state.loading;
+  const isConfirmed = state.confirmed && !state.loading;
+  const isDeleted = state.deleted && state.confirmed;
+
   React.useEffect(() => {
     if (state.loading) {
       setTimeout(() => {
@@ -58,7 +63,7 @@ function UseReducer({ name }) {
     }
   }, [state.loading]);
 
-  if (!state.deleted && state.confirmed) {
+  if (!state.deleted && isConfirmed) {
     return (
       <React.Fragment>
         <p>¿Seguro que quieres eliminar?</p>
@@ -70,7 +75,7 @@ function UseReducer({ name }) {
         >No, cancelar</button>
       </React.Fragment>
     );
-  } else if (state.deleted && state.confirmed) {
+  } else if (isDeleted) {
     return (
       <React.Fragment>
         <p>Eliminado con éxito</p>
@@ -85,7 +90,7 @@ function UseReducer({ name }) {
         <h2>Eliminar {name}</h2>
         <p>Por favor, escribe el código de seguridad.</p>
 
-        {(state.error && !state.loading) && (
+        {isError && (
           <p>Error: el código es incorrecto</p>
         )}
 
