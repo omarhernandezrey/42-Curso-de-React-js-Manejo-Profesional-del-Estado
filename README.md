@@ -1,6 +1,9 @@
 # React State Management Professional Course
 
+[![Deployment Status](https://img.shields.io/badge/LIVE_DEMO-Vercel-black?style=for-the-badge&logo=vercel)](https://42-curso-de-react-js-manejo-profesi.vercel.app/)
+
 Project to demonstrate professional state management concepts in React.
+
 
 ## Progress Tracking
 
