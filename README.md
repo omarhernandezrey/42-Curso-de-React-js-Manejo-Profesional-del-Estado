@@ -7,7 +7,7 @@ Project to demonstrate professional state management concepts in React.
 | # | Concept | Commit | Status |
 |---|---|---|---|
 | 1 | 1 Dime cómo manejas el estado y te diré... | - | ✅ |
-| 2 | 2 Nuevo proyecto códigos de seguridad | - | ❌ |
+| 2 | 2 Nuevo proyecto códigos de seguridad | - | ✅ |
 | 3 | 3 Estados simples React.Component vs. useState | - | ❌ |
 | 4 | 4 Efectos con useEffect | - | ❌ |
 | 5 | 5 Métodos del ciclo de vida en React.Component | - | ❌ |
