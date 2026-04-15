@@ -16,7 +16,7 @@ Project to demonstrate professional state management concepts in React.
 | 8 | 8 Estados compuestos con React.Component | - | ✅ |
 | 9 | 9 Estados compuestos con useState | - | ✅ |
 | 10 | 10 Estados imperativos con useState | - | ✅ |
-| 11 | 11 Estados semideclarativos con useState | - | ❌ |
+| 11 | 11 Estados semideclarativos con useState | - | ✅ |
 | 12 | 12 ¿Qué es un reducer | - | ❌ |
 | 13 | 13 3 formas de crear un reducer | - | ❌ |
 | 14 | 14 Estados declarativos con useReducer | - | ❌ |
