@@ -10,7 +10,7 @@ Project to demonstrate professional state management concepts in React.
 | 2 | 2 Nuevo proyecto códigos de seguridad | - | ✅ |
 | 3 | 3 Estados simples React.Component vs. useState | - | ✅ |
 | 4 | 4 Efectos con useEffect | - | ✅ |
-| 5 | 5 Métodos del ciclo de vida en React.Component | - | ❌ |
+| 5 | 5 Métodos del ciclo de vida en React.Component | - | ✅ |
 | 6 | 6 Estados independientes con useState | - | ❌ |
 | 7 | 7 ¿Dónde actualizar el estado | - | ❌ |
 | 8 | 8 Estados compuestos con React.Component | - | ❌ |
