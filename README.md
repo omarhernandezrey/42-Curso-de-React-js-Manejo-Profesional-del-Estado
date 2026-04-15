@@ -31,3 +31,4 @@ Project to demonstrate professional state management concepts in React.
 Este proyecto cubre los fundamentos del manejo profesional del estado en React, desde estados simples con `useState` y componentes de clase, hasta estados complejos y declarativos con `useReducer`. 
 
 ¡Gracias por seguir el curso!
+# 42-Curso-de-React-js-Manejo-Profesional-del-Estado
